@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --text: #1a1a1a;
+  --card: #ffffff;
+  --card-hover: #f3f4f6;
+  --border: #e5e7eb;
+  --primary: #6366f1;
+  --primary-hover: #4f46e5;
+}
+
+.dark {
+  --background: #111827;
+  --text: #f3f4f6;
+  --card: #1f2937;
+  --card-hover: #374151;
+  --border: #374151;
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--text)] transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--primary)] text-white hover:bg-[var(--primary-hover)];
+  }
+
+  .card {
+    @apply bg-[var(--card)] border border-[var(--border)] shadow-lg rounded-xl p-6;
+  }
+
+  .input {
+    @apply bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-2 focus:ring-2 focus:ring-[var(--primary)] focus:border-transparent outline-none;
+  }
+}
+
+/* Recharts Customization */
+.recharts-wrapper {
+  @apply !font-sans;
+}
+
+.recharts-text {
+  @apply !fill-current;
+}
+
+.recharts-default-tooltip {
+  @apply !bg-white dark:!bg-gray-800 !border-gray-200 dark:!border-gray-700 !shadow-lg;
+}
+
+.recharts-tooltip-label {
+  @apply !text-gray-900 dark:!text-white;
+}
+
+.recharts-tooltip-item {
+  @apply !text-purple-600 dark:!text-purple-400;
+}
+
+.recharts-cartesian-grid line {
+  @apply !stroke-gray-200 dark:!stroke-gray-700;
+}
+
+.recharts-cartesian-axis-line {
+  @apply !stroke-gray-300 dark:!stroke-gray-600;
+}
+
+.recharts-legend-item-text {
+  @apply !text-gray-900 dark:!text-white;
+}
